@@ -1,164 +1,215 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Oviyaa P - MBBS, Cosmetology</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Oviyaa P — Patient Reviews</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-pink-600 to-rose-700 text-white py-20">
+  <!-- Minimal page (use your existing page structure if preferred) -->
+  <section class="bg-gradient-to-r from-pink-600 to-rose-700 text-white py-16">
     <div class="container mx-auto px-6 text-center">
-      <div class="mb-8">
-        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-pink-300 flex items-center justify-center text-6xl">
-          👩‍⚕️
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Dr. Oviyaa P</h1>
-        <h2 class="text-xl md:text-2xl text-pink-200 mb-4">MBBS, Cosmetology</h2>
-        <p class="text-lg text-pink-100 max-w-2xl mx-auto">
-          "Blending medical precision with aesthetic artistry to enhance wellness and confidence."
-        </p>
-      </div>
+      <h1 class="text-3xl font-bold">Dr. Oviyaa P — Patient Reviews</h1>
+      <p class="mt-2 text-pink-100">Submit a review. See reviews update instantly.</p>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About Dr. Oviyaa</h2>
-
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <div class="space-y-6">
-          <h3 class="text-2xl font-semibold text-pink-700 mb-4">Biography</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Dr. Oviyaa is a committed healthcare professional with a dual specialization in General Practice and Cosmetology. 
-            With over four years of clinical experience, she integrates evidence-based medical practice with aesthetic care, 
-            offering a holistic approach to health and beauty.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Her mission is to empower individuals to achieve confidence through wellness—focusing on both inner health and outer radiance. 
-            Known for her patient-centered approach and meticulous attention to detail, she continues to make a positive impact in her patients’ lives.
-          </p>
+  <main class="container mx-auto px-6 py-10 max-w-4xl">
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <form id="reviewForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Your name</label>
+          <input id="patientName" type="text" required class="w-full mt-1 p-3 border rounded" />
         </div>
 
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-2xl font-semibold text-pink-700 mb-4 flex items-center">🎓 Education</h3>
-            <div class="space-y-3">
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <h4 class="font-semibold">MBBS</h4>
-                <p class="text-gray-600">Bachelor of Medicine and Bachelor of Surgery</p>
-              </div>
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <h4 class="font-semibold">Diploma in Cosmetology</h4>
-                <p class="text-gray-600">Certified training in aesthetic and skincare procedures</p>
-              </div>
-            </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Rating</label>
+          <div id="starRating" class="flex gap-2 mt-1">
+            <button type="button" class="star text-2xl" data-rating="1">☆</button>
+            <button type="button" class="star text-2xl" data-rating="2">☆</button>
+            <button type="button" class="star text-2xl" data-rating="3">☆</button>
+            <button type="button" class="star text-2xl" data-rating="4">☆</button>
+            <button type="button" class="star text-2xl" data-rating="5">☆</button>
           </div>
-
-          <div>
-            <h3 class="text-2xl font-semibold text-pink-700 mb-4 flex items-center">🏆 Certifications</h3>
-            <div class="grid grid-cols-1 gap-3">
-              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
-                <span class="text-pink-600 mr-3">✓</span>
-                <span>Laser and Aesthetic Dermatology</span>
-              </div>
-              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
-                <span class="text-pink-600 mr-3">✓</span>
-                <span>Advanced Skincare and Rejuvenation</span>
-              </div>
-              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
-                <span class="text-pink-600 mr-3">✓</span>
-                <span>Non-surgical Facial Enhancement</span>
-              </div>
-            </div>
-          </div>
+          <input id="ratingValue" name="rating" type="hidden" value="0" />
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Core Services</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-pink-700 mb-3">Skin Rejuvenation</h3>
-          <p class="text-gray-600">Advanced facials, peels, and laser therapies to restore glow and vitality.</p>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Review</label>
+          <textarea id="reviewMessage" rows="4" required class="w-full mt-1 p-3 border rounded"></textarea>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-pink-700 mb-3">Hair Restoration</h3>
-          <p class="text-gray-600">Comprehensive treatments for hair fall, thinning, and scalp health.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-pink-700 mb-3">Aesthetic Procedures</h3>
-          <p class="text-gray-600">Non-invasive cosmetic enhancements for a natural, youthful appearance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Patient Review Submission Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Share Your Experience</h2>
-
-      <div class="max-w-2xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
-        <form id="reviewForm" class="space-y-6">
-          <div>
-            <label for="patientName" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-            <input type="text" id="patientName" name="patientName" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Rating</label>
-            <div class="flex space-x-1" id="starRating">
-              <span class="star text-3xl text-gray-300" data-rating="1">★</span>
-              <span class="star text-3xl text-gray-300" data-rating="2">★</span>
-              <span class="star text-3xl text-gray-300" data-rating="3">★</span>
-              <span class="star text-3xl text-gray-300" data-rating="4">★</span>
-              <span class="star text-3xl text-gray-300" data-rating="5">★</span>
-            </div>
-            <input type="hidden" id="ratingValue" name="rating" value="0">
-          </div>
-
-          <div>
-            <label for="reviewMessage" class="block text-sm font-medium text-gray-700 mb-2">Your Review</label>
-            <textarea id="reviewMessage" name="reviewMessage" rows="4" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              placeholder="Share your experience with Dr. Oviyaa..."></textarea>
-          </div>
-
-          <button type="submit"
-            class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg hover:bg-pink-700 transition duration-200 font-semibold">
+        <div>
+          <button id="submitBtn" type="submit" class="w-full bg-pink-600 text-white p-3 rounded">
             Submit Review
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
-  </section>
 
-  <!-- Displayed Reviews Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Patient Reviews</h2>
-      <div id="reviewsContainer" class="max-w-4xl mx-auto space-y-6"></div>
-    </div>
-  </section>
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Patient Reviews</h2>
+      <div id="reviewsContainer" class="space-y-4"></div>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-rose-800 text-white py-8">
-    <div class="container mx-auto px-6 text-center">
-      <p class="mb-2">&copy; 2024 Dr. Oviyaa P. All rights reserved.</p>
-      <p class="text-rose-200">Empowering confidence through health, beauty, and wellness.</p>
-    </div>
-  </footer>
+  <!-- Firebase + App logic -->
+  <script type="module">
+    // 1) Firebase SDK imports (modular)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp,
+      query,
+      orderBy,
+      onSnapshot
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
-  <script type="module" src="script.js"></script>
+    // 2) Your provided config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBcNRA51BQT7Z0-tgyL1tujJuG--7Skf7M",
+      authDomain: "oviyaa.firebaseapp.com",
+      projectId: "oviyaa",
+      storageBucket: "oviyaa.firebasestorage.app",
+      messagingSenderId: "846903640849",
+      appId: "1:846903640849:web:ec6b0b0fd04c97ac4bc2b0",
+      measurementId: "G-Z3M6BY5HBT"
+    };
 
+    // 3) Init
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 4) DOM
+    const form = document.getElementById('reviewForm');
+    const nameInput = document.getElementById('patientName');
+    const ratingInput = document.getElementById('ratingValue');
+    const messageInput = document.getElementById('reviewMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    const stars = document.querySelectorAll('.star');
+
+    // 5) Star rating UI
+    function renderStars(selected) {
+      stars.forEach(s => {
+        const r = Number(s.dataset.rating);
+        s.textContent = r <= selected ? '★' : '☆';
+        s.classList.toggle('text-yellow-500', r <= selected);
+      });
+    }
+    stars.forEach(s => {
+      s.addEventListener('click', () => {
+        const val = Number(s.dataset.rating);
+        ratingInput.value = val;
+        renderStars(val);
+      });
+    });
+
+    // 6) Submit review to Firestore
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const rating = Number(ratingInput.value) || 0;
+      const message = messageInput.value.trim();
+
+      if (!name) {
+        alert('Please enter your name.');
+        return;
+      }
+      if (rating < 1 || rating > 5) {
+        alert('Please select a rating (1-5).');
+        return;
+      }
+      if (!message) {
+        alert('Please write a review.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        await addDoc(collection(db, 'reviews'), {
+          name,
+          rating,
+          message,
+          timestamp: serverTimestamp()
+        });
+        // clear form
+        nameInput.value = '';
+        ratingInput.value = '0';
+        messageInput.value = '';
+        renderStars(0);
+      } catch (err) {
+        console.error('Write failed', err);
+        alert('Failed to submit. Check console.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Review';
+      }
+    });
+
+    // 7) Real-time listener: show newest first
+    const reviewsQuery = query(collection(db, 'reviews'), orderBy('timestamp', 'desc'));
+    onSnapshot(
+      reviewsQuery,
+      (snapshot) => {
+        reviewsContainer.innerHTML = '';
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          // Build review element safely using textContent
+          const wrapper = document.createElement('div');
+          wrapper.className = 'bg-white p-4 rounded shadow';
+
+          const top = document.createElement('div');
+          top.className = 'flex items-center justify-between mb-2';
+          const who = document.createElement('div');
+          who.className = 'font-semibold';
+          who.textContent = data.name || 'Anonymous';
+
+          const meta = document.createElement('div');
+          meta.className = 'text-sm text-gray-500';
+          // timestamp may be null for very new writes; handle gracefully
+          try {
+            meta.textContent = data.timestamp && data.timestamp.toDate
+              ? data.timestamp.toDate().toLocaleString()
+              : '';
+          } catch (e) {
+            meta.textContent = '';
+          }
+
+          top.appendChild(who);
+          top.appendChild(meta);
+
+          const ratingRow = document.createElement('div');
+          ratingRow.className = 'mb-2';
+          const r = Number(data.rating) || 0;
+          ratingRow.textContent = 'Rating: ' + '★'.repeat(r) + '☆'.repeat(5 - r);
+
+          const msg = document.createElement('div');
+          msg.className = 'text-gray-700';
+          msg.textContent = data.message || '';
+
+          wrapper.appendChild(top);
+          wrapper.appendChild(ratingRow);
+          wrapper.appendChild(msg);
+
+          reviewsContainer.appendChild(wrapper);
+        });
+
+        if (snapshot.empty) {
+          reviewsContainer.innerHTML = '<div class="text-gray-500">No reviews yet.</div>';
+        }
+      },
+      (err) => {
+        console.error('Realtime error', err);
+        reviewsContainer.innerHTML = '<div class="text-red-600">Could not load reviews.</div>';
+      }
+    );
+  </script>
 </body>
 </html>
