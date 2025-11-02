@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Oviyaa P - MBBS, Cosmetology</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-pink-600 to-rose-700 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+      <div class="mb-8">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-pink-300 flex items-center justify-center text-6xl">
+          👩‍⚕️
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Dr. Oviyaa P</h1>
+        <h2 class="text-xl md:text-2xl text-pink-200 mb-4">MBBS, Cosmetology</h2>
+        <p class="text-lg text-pink-100 max-w-2xl mx-auto">
+          "Blending medical precision with aesthetic artistry to enhance wellness and confidence."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About Dr. Oviyaa</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div class="space-y-6">
+          <h3 class="text-2xl font-semibold text-pink-700 mb-4">Biography</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Dr. Oviyaa is a committed healthcare professional with a dual specialization in General Practice and Cosmetology. 
+            With over four years of clinical experience, she integrates evidence-based medical practice with aesthetic care, 
+            offering a holistic approach to health and beauty.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Her mission is to empower individuals to achieve confidence through wellness—focusing on both inner health and outer radiance. 
+            Known for her patient-centered approach and meticulous attention to detail, she continues to make a positive impact in her patients’ lives.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-semibold text-pink-700 mb-4 flex items-center">🎓 Education</h3>
+            <div class="space-y-3">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold">MBBS</h4>
+                <p class="text-gray-600">Bachelor of Medicine and Bachelor of Surgery</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold">Diploma in Cosmetology</h4>
+                <p class="text-gray-600">Certified training in aesthetic and skincare procedures</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold text-pink-700 mb-4 flex items-center">🏆 Certifications</h3>
+            <div class="grid grid-cols-1 gap-3">
+              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
+                <span class="text-pink-600 mr-3">✓</span>
+                <span>Laser and Aesthetic Dermatology</span>
+              </div>
+              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
+                <span class="text-pink-600 mr-3">✓</span>
+                <span>Advanced Skincare and Rejuvenation</span>
+              </div>
+              <div class="bg-pink-50 p-3 rounded-lg flex items-center">
+                <span class="text-pink-600 mr-3">✓</span>
+                <span>Non-surgical Facial Enhancement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Core Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-pink-700 mb-3">Skin Rejuvenation</h3>
+          <p class="text-gray-600">Advanced facials, peels, and laser therapies to restore glow and vitality.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-pink-700 mb-3">Hair Restoration</h3>
+          <p class="text-gray-600">Comprehensive treatments for hair fall, thinning, and scalp health.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-pink-700 mb-3">Aesthetic Procedures</h3>
+          <p class="text-gray-600">Non-invasive cosmetic enhancements for a natural, youthful appearance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Review Submission Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Share Your Experience</h2>
+
+      <div class="max-w-2xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
+        <form id="reviewForm" class="space-y-6">
+          <div>
+            <label for="patientName" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+            <input type="text" id="patientName" name="patientName" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+            <div class="flex space-x-1" id="starRating">
+              <span class="star text-3xl text-gray-300" data-rating="1">★</span>
+              <span class="star text-3xl text-gray-300" data-rating="2">★</span>
+              <span class="star text-3xl text-gray-300" data-rating="3">★</span>
+              <span class="star text-3xl text-gray-300" data-rating="4">★</span>
+              <span class="star text-3xl text-gray-300" data-rating="5">★</span>
+            </div>
+            <input type="hidden" id="ratingValue" name="rating" value="0">
+          </div>
+
+          <div>
+            <label for="reviewMessage" class="block text-sm font-medium text-gray-700 mb-2">Your Review</label>
+            <textarea id="reviewMessage" name="reviewMessage" rows="4" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              placeholder="Share your experience with Dr. Oviyaa..."></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg hover:bg-pink-700 transition duration-200 font-semibold">
+            Submit Review
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Displayed Reviews Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Patient Reviews</h2>
+      <div id="reviewsContainer" class="max-w-4xl mx-auto space-y-6"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-rose-800 text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p class="mb-2">&copy; 2024 Dr. Oviyaa P. All rights reserved.</p>
+      <p class="text-rose-200">Empowering confidence through health, beauty, and wellness.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
