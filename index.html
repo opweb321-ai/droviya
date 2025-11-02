@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -140,7 +139,8 @@
   <!-- Firebase review logic -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } 
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyBcNRA51BQT7Z0-tgyL1tujJuG--7Skf7M",
@@ -187,9 +187,11 @@
       alert("Thank you for your review!");
     });
 
-    // Live display (with date only)
+    // Live display (latest first)
     const container = document.getElementById("reviewsContainer");
-    onSnapshot(collection(db, "reviews"), snapshot => {
+    const reviewsQuery = query(collection(db, "reviews"), orderBy("timestamp", "desc"));
+
+    onSnapshot(reviewsQuery, snapshot => {
       container.innerHTML = "";
       snapshot.docs.forEach(doc => {
         const r = doc.data();
